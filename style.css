@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Open Sans', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #000;
+    background-image: url(./moun.jpg);
+    background-position: center; 
+    background-size: cover; 
+  }
+
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+a:hover{
+    color: orange;
+}
+
+header{
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.navbar .logo a {
+    font-size: 1.5rem;
+}
+
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+    font-size: 20px;
+    margin: auto auto;
+}
+
+.action_btn{
+    background-color: orange;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action_btn:hover{
+    scale: 1.05;
+    color: #fff
+}
+
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    opacity: 0;
+    visibility: hidden;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+.dropdown_menu.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+section#hero{
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+#hero h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+
+.toggle_btn img{
+    height: 30px;
+    width: 30px;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+@media screen and (max-width: 600px) {
+    .navbar .links,
+    .navbar .action_btn{
+        display: none;
+    }
+
+    .navbar .toggle_btn img{
+        display: block;
+    }
+
+    .dropdown_menu{
+        display: block;
+    }
+}
